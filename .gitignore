@@ -1,0 +1,12 @@
+#IDE extension
+.history
+
+
+#build
+dist
+
+#dependencies
+node_modules
+yarn-error.log
+yarn.lock
+package-lock.json
