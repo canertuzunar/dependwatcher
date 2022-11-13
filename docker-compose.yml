@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis
+    container_name: redis_server
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6379:6379
+  
+  redis_commander:
+    container_name: redis_commander
+    image: rediscommander/redis-commander
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+
+  server: 
+    container_name: dependbot_backend
+    build:
+      context: ./
+    environment:
+      REDIS_URL: redis_server
+      REDIS_URL_PORT: 6379
+      EXPRESS_PORT: 5000
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/dependbot/app
