@@ -1,0 +1,28 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:prettier/recommended",
+        "prettier",
+        "plugin:eslint-comments/recommended"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "eslint-comments"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "eslint-comments/no-unused-disable": "error",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/restrict-template-expressions": "warn"
+    }
+}
